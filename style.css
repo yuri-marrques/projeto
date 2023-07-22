@@ -44,7 +44,8 @@ body * {
 
 #container {
   margin: auto; /*centraliza o conteudo */
-  width: 360px; /*largura*/
+  width: 100%; /*largura*/
+  max-width: 588px;
   margin: 56px auto 0px; /*funciona como um relógio: top, rigth, bottom, left*/
   padding: 0px 24px;
 }

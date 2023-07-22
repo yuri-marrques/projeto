@@ -1,0 +1,167 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/*variaveis do css*/
+:root {
+  --text-color: white;
+  --bg-url: url(./assets/bg-mobile.jpg);
+  --surface-color: rgba(255, 255, 255, 0.1);
+  --stroke-color: rgba(255, 255, 255, 0.5);
+  --surface-hover: rgba(255, 255, 255, 0.05);
+  --social-hover: rgba(255, 255, 255, 0.2);
+  --toggle-color: url(./assets/moon-stars.svg);
+}
+
+.light {
+  --text-color: black;
+  --bg-url: url(./assets/bg-desktop-light.jpg);
+  --surface-color: rgba(0, 0, 0, 0.05);
+  --stroke-color: rgba(0, 0, 0, 0.5);
+  --surface-hover: rgba(rgba(0, 0, 0, 0.02));
+  --social-hover: rgba(0, 0, 0, 0.10);
+  --toggle-color: url(./assets/sun.svg);
+}
+
+body {
+  /*
+  background-image: url(./assets/bg-mobile.jpg);
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover; 
+  */
+
+  /*background: color image repeat position/color --> ordem*/
+
+  background: var(--bg-url) no-repeat top center/cover; /*atalho para escrever apenas uma linha*/
+}
+
+body * {
+  font-family: "Inter", sans-serif;
+  color: var(--text-color);
+}
+
+#container {
+  margin: auto; /*centraliza o conteudo */
+  width: 360px; /*largura*/
+  margin: 56px auto 0px; /*funciona como um relógio: top, rigth, bottom, left*/
+  padding: 0px 24px;
+}
+
+/*profile*/
+
+#profile {
+  text-align: center; /*serve para alinhar elementos "inline"*/
+  padding: 24px;
+}
+
+#profile img {
+  width: 112px;
+}
+
+#profile p {
+  font-weight: 500;
+  font-size: 16px; /*tamanho padrão dos navegadores*/
+  line-height: 24px;
+  margin-top: 8px;
+}
+
+/*switch*/
+
+#switch{
+  position: relative;
+  width: 64px;
+  margin: 4px auto;
+}
+
+#switch button{
+  width: 32px;
+  height: 32px;
+  background: white var(--toggle-color) no-repeat center;
+  border: 0;
+  border-radius: 50%;
+
+  position: absolute;
+  z-index: 1;
+  transform: translateY(-50%);
+  top: 50%;
+  left: 0;
+}
+
+.light #switch button{
+  right: 0;
+  left: initial;
+}
+
+#switch span{
+  display: block;
+  width: 64px;
+  height: 24px;
+  border: 1px solid var(--stroke-color);
+  background: var(--surface-color);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 9999px;
+}
+
+/*links - lista*/
+
+ul {
+  list-style: none; /*remove o estilo da lista*/
+  display: flex; /*organiza de forma flexivel os filhos do pai*/
+  flex-direction: column; /*organiza em forma de coluna*/
+  gap: 16px; /*espaço entre os elementos*/
+  padding: 24px 0;
+}
+
+ul li a {
+  display: flex;
+  justify-content: center; /*alinha ao eixo y*/
+  align-items: center; /*alinha ao eixo x*/
+  padding: 16px 24px;
+  background: var(--surface-color);
+  border: 1px solid var(--stroke-color);
+  border-radius: 8px;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(
+    4px
+  ); /*para navegadores com versões menos atualizadas*/
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.2s; /*add transição suave para o hover*/
+}
+
+/*quando o mouse passa por cima do elemento*/
+ul li a:hover {
+  background: var(--surface-hover);
+  border: 1.5px solid var(--text-color);
+}
+
+/*social links*/
+#social-links {
+  display: flex;
+  padding: 24px 0;
+  justify-content: center;
+  font-size: 24px;
+}
+
+#social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  transition: background 0.2s;
+  border-radius: 50%;
+}
+
+#social-links a:hover {
+  background: var(--social-hover);
+}
+
+/*footer*/
+footer {
+  padding: 24px 0;
+  text-align: center;
+  font-size: 14px;
+}
